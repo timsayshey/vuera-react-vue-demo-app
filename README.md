@@ -1,68 +1,71 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Help
 
-## Available Scripts
+Running this repo currently returns the following error when the page loads:
 
-In the project directory, you can run:
+```
+index.js:1375 [Vue warn]: Failed to mount component: template or render function not defined.
 
-### `npm start`
+found in
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+---> <VueraInternalComponentName> at src/Test.vue
+       <Root>
+console.<computed> @ index.js:1375
+warn @ vue.runtime.esm.js:638
+mountComponent @ vue.runtime.esm.js:4015
+push../node_modules/vue/dist/vue.runtime.esm.js.Vue.$mount @ vue.runtime.esm.js:8391
+init @ vue.runtime.esm.js:3110
+createComponent @ vue.runtime.esm.js:5932
+createElm @ vue.runtime.esm.js:5880
+patch @ vue.runtime.esm.js:6525
+Vue._update @ vue.runtime.esm.js:3916
+updateComponent @ vue.runtime.esm.js:4045
+get @ vue.runtime.esm.js:4459
+Watcher @ vue.runtime.esm.js:4446
+mountComponent @ vue.runtime.esm.js:4052
+push../node_modules/vue/dist/vue.runtime.esm.js.Vue.$mount @ vue.runtime.esm.js:8391
+Vue._init @ vue.runtime.esm.js:5006
+Vue @ vue.runtime.esm.js:5081
+createVueInstance @ vuera.cjs.js:232
+VueContainer._this.createVueInstance @ vuera.cjs.js:184
+commitAttachRef @ react-dom.development.js:21338
+commitLayoutEffects @ react-dom.development.js:24143
+callCallback @ react-dom.development.js:363
+invokeGuardedCallbackDev @ react-dom.development.js:412
+invokeGuardedCallback @ react-dom.development.js:466
+commitRootImpl @ react-dom.development.js:23903
+unstable_runWithPriority @ scheduler.development.js:674
+runWithPriority$2 @ react-dom.development.js:11834
+commitRoot @ react-dom.development.js:23723
+scheduleUpdateOnFiber @ react-dom.development.js:22656
+scheduleRootUpdate @ react-dom.development.js:25686
+updateContainerAtExpirationTime @ react-dom.development.js:25712
+updateContainer @ react-dom.development.js:25812
+(anonymous) @ react-dom.development.js:26370
+unbatchedUpdates @ react-dom.development.js:22952
+legacyRenderSubtreeIntoContainer @ react-dom.development.js:26369
+render @ react-dom.development.js:26460
+./src/index.js @ index.js:7
+__webpack_require__ @ bootstrap:781
+fn @ bootstrap:149
+0 @ serviceWorker.js:135
+__webpack_require__ @ bootstrap:781
+checkDeferredModules @ bootstrap:45
+webpackJsonpCallback @ bootstrap:32
+(anonymous) @ main.chunk.js:1
+Show 13 more frames
+vue.runtime.esm.js:8408 You are running Vue in development mode.
+Make sure to turn on production mode when deploying for production.
+See more tips at https://vuejs.org/guide/deployment.html
+webpackHotDevClient.js:120 ./src/App.js
+  Line 3:  'Vue' is defined but never used  no-unused-vars
+printWarnings @ webpackHotDevClient.js:120
+handleWarnings @ webpackHotDevClient.js:125
+push../node_modules/react-dev-utils/webpackHotDevClient.js.connection.onmessage @ webpackHotDevClient.js:190
+push../node_modules/sockjs-client/lib/event/eventtarget.js.EventTarget.dispatchEvent @ eventtarget.js:56
+(anonymous) @ main.js:282
+push../node_modules/sockjs-client/lib/main.js.SockJS._transportMessage @ main.js:280
+push../node_modules/sockjs-client/lib/event/emitter.js.EventEmitter.emit @ emitter.js:53
+WebSocketTransport.ws.onmessage @ websocket.js:36
+webpackHotDevClient.js:65 The development server has disconnected.
+Refresh the page if necessary.
+```
