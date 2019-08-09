@@ -27,6 +27,7 @@ const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpack
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 
 const postcssNormalize = require('postcss-normalize');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
@@ -295,6 +296,16 @@ module.exports = function(webpackEnv) {
     module: {
       strictExportPresence: true,
       rules: [
+        {
+          test: /\.(js|jsx)$/,
+          exclude: /node_modules/,
+          use: ['babel-loader']
+        },
+        { // add vue-loader
+          test: /\.vue$/,
+          loader: 'vue-loader',
+        },
+
         // Disable require.ensure as it's not a standard language feature.
         { parser: { requireEnsure: false } },
 
@@ -302,6 +313,7 @@ module.exports = function(webpackEnv) {
         // It's important to do this before Babel processes the JS.
         {
           test: /\.(js|mjs|jsx|ts|tsx)$/,
+          exclude: [/\.vue/], // exclude .vue
           enforce: 'pre',
           use: [
             {
@@ -463,7 +475,7 @@ module.exports = function(webpackEnv) {
               // its runtime that would otherwise be processed through "file" loader.
               // Also exclude `html` and `json` extensions so they get processed
               // by webpacks internal loaders.
-              exclude: [/\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/],
+              exclude: [/\.(js|mjs|jsx|ts|tsx|vue)$/, /\.html$/, /\.json$/],
               options: {
                 name: 'static/media/[name].[hash:8].[ext]',
               },
@@ -475,6 +487,7 @@ module.exports = function(webpackEnv) {
       ],
     },
     plugins: [
+      new VueLoaderPlugin(), // add VuePlugin
       // Generates an `index.html` file with the <script> injected.
       new HtmlWebpackPlugin(
         Object.assign(
