@@ -1,12 +1,26 @@
-import React from 'react'
-import Test from './Test.vue'
-import Vue from 'vue';
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
 
-export default () => (
-  <div>
-    <h1>I'm a react component</h1>
-    <div>
-      <Test message='Hello from Vue!' />
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
-  </div>
-)
+  );
+}
+
+export default App;
